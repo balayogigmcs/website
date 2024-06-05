@@ -241,70 +241,70 @@ class BodyStyling extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 50),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const NewsAndUpdates()),
-                    );
-                  },
-                  child: const Text(
-                    'News and Updates',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.only(left: 40.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const NewsAndUpdates()),
-                          );
-                        },
-                        child: const Text(
-                          'Latest Announcements',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const NewsAndUpdates()),
-                          );
-                        },
-                        child: const Text(
-                          'Success Stories',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const NewsAndUpdates()),
-                          );
-                        },
-                        child: const Text(
-                          'Events and Workshops',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // TextButton(
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //           builder: (context) => const NewsAndUpdates()),
+                //     );
+                //   },
+                //   child: const Text(
+                //     'News and Updates',
+                //     textAlign: TextAlign.left,
+                //     style: TextStyle(fontSize: 30),
+                //   ),
+                // ),
+                // const SizedBox(height: 20),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 40.0),
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //       TextButton(
+                //         onPressed: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //                 builder: (context) => const NewsAndUpdates()),
+                //           );
+                //         },
+                //         child: const Text(
+                //           'Latest Announcements',
+                //           style: TextStyle(fontSize: 15),
+                //         ),
+                //       ),
+                //       const SizedBox(height: 10),
+                //       TextButton(
+                //         onPressed: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //                 builder: (context) => const NewsAndUpdates()),
+                //           );
+                //         },
+                //         child: const Text(
+                //           'Success Stories',
+                //           style: TextStyle(fontSize: 15),
+                //         ),
+                //       ),
+                //       const SizedBox(height: 10),
+                //       TextButton(
+                //         onPressed: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //                 builder: (context) => const NewsAndUpdates()),
+                //           );
+                //         },
+                //         child: const Text(
+                //           'Events and Workshops',
+                //           style: TextStyle(fontSize: 15),
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 const SizedBox(height: 50),
                 TextButton(
                   onPressed: () {
