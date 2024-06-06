@@ -91,7 +91,7 @@ class Housing extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 0),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -102,6 +102,7 @@ class Housing extends StatelessWidget {
                     'assets/images/house.png',
                     fit: BoxFit.fitWidth,
                     filterQuality: FilterQuality.high,
+                    // height: 600,
                   ),
                 ),
                 const SizedBox(

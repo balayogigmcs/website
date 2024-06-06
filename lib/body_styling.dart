@@ -24,7 +24,7 @@ class BodyStyling extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 const Padding(
-                  padding:  EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -248,6 +248,164 @@ class BodyStyling extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 50),
+                Stack(
+                  alignment: Alignment.centerLeft,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                          15.0), // Increased border radius for a smoother look
+                      child: Image.asset(
+                        'assets/images/RT.png',
+                        width: 1000,
+                        height: 600,
+                        fit: BoxFit.cover,
+                        filterQuality: FilterQuality.high,
+                      ),
+                    ),
+                    Container(
+                      width: 1000,
+                      height: 600,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                            15.0), // Same border radius as ClipRRect
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.black.withOpacity(0.6),
+                            Colors.transparent
+                          ],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 50,
+                      left: 40, // Increased left padding for better layout
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(
+                                  255, 92, 0, 220), // Background color
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 12, horizontal: 20),
+                              shadowColor: Colors.black.withOpacity(0.3),
+                              elevation: 5,
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ResourcesAndTools()),
+                              );
+                            },
+                            child: const Text(
+                              'Resources and Tools',
+                              style: TextStyle(
+                                fontSize: 28,
+                                color: Colors
+                                    .white, // White text for better contrast
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 60),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 0, 4, 239),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 20),
+                              shadowColor: Colors.black.withOpacity(0.3),
+                              elevation: 5,
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const NewsAndUpdates()),
+                              );
+                            },
+                            child: const Text(
+                              'Calculator\'s and Tools',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 40),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 47, 0, 255),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 20),
+                              shadowColor: Colors.black.withOpacity(0.3),
+                              elevation: 5,
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const NewsAndUpdates()),
+                              );
+                            },
+                            child: const Text(
+                              'FAQ\'s',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 40),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 0, 29, 243),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 20),
+                              shadowColor: Colors.black.withOpacity(0.3),
+                              elevation: 5,
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const NewsAndUpdates()),
+                              );
+                            },
+                            child: const Text(
+                              'Glossary',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
                 // TextButton(
                 //   onPressed: () {
                 //     Navigator.push(
@@ -313,66 +471,66 @@ class BodyStyling extends StatelessWidget {
                 //   ),
                 // ),
                 const SizedBox(height: 50),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ResourcesAndTools()),
-                    );
-                  },
-                  child: const Text(
-                    'Resources and Tools',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 30),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ResourcesAndTools()),
-                        );
-                      },
-                      child: const Text(
-                        'Calculators and Tools',
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ResourcesAndTools()),
-                        );
-                      },
-                      child: const Text(
-                        'FAQ\'s',
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ResourcesAndTools()),
-                        );
-                      },
-                      child: const Text(
-                        'Glossary',
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ),
-                  ],
-                ),
+                // TextButton(
+                //   onPressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //           builder: (context) => const ResourcesAndTools()),
+                //     );
+                //   },
+                //   child: const Text(
+                //     'Resources and Tools',
+                //     textAlign: TextAlign.left,
+                //     style: TextStyle(fontSize: 30),
+                //   ),
+                // ),
+                // const SizedBox(height: 20),
+                // Column(
+                //   children: [
+                //     TextButton(
+                //       onPressed: () {
+                //         Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => const ResourcesAndTools()),
+                //         );
+                //       },
+                //       child: const Text(
+                //         'Calculators and Tools',
+                //         style: TextStyle(fontSize: 15),
+                //       ),
+                //     ),
+                //     const SizedBox(height: 10),
+                //     TextButton(
+                //       onPressed: () {
+                //         Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => const ResourcesAndTools()),
+                //         );
+                //       },
+                //       child: const Text(
+                //         'FAQ\'s',
+                //         style: TextStyle(fontSize: 15),
+                //       ),
+                //     ),
+                //     const SizedBox(height: 10),
+                //     TextButton(
+                //       onPressed: () {
+                //         Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => const ResourcesAndTools()),
+                //         );
+                //       },
+                //       child: const Text(
+                //         'Glossary',
+                //         style: TextStyle(fontSize: 15),
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 const SizedBox(height: 50),
                 const Text(
                   'Contact Us',

@@ -88,7 +88,7 @@ class Water extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 0),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -99,6 +99,7 @@ class Water extends StatelessWidget {
                     'assets/images/water.png',
                     fit: BoxFit.fitWidth,
                     filterQuality: FilterQuality.high,
+                    // height: 600,
                   ),
                 ),
                 const SizedBox(

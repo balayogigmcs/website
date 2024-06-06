@@ -79,6 +79,7 @@ flutter:
      - assets/images/CD.png
      - assets/images/LM1.png
      - assets/images/WD1.png
+     - assets/images/RT.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
