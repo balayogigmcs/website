@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:website/categories/business.dart';
+import 'package:website/categories/community.dart';
+import 'package:website/categories/employment.dart';
+import 'package:website/categories/housing.dart';
+import 'package:website/categories/land.dart';
+import 'package:website/categories/water.dart';
 import 'package:website/home/news_and_updates.dart';
 import 'package:website/home/resources_and_tools.dart';
 
@@ -17,21 +23,21 @@ class BodyStyling extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
+                const Padding(
+                  padding:  EdgeInsets.all(20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(width: 30),
-                      const Text(
+                      SizedBox(width: 30),
+                      Text(
                         'PUBLIC SECTOR INNOVATIONS',
                         style: TextStyle(fontSize: 36),
                       ),
-                      const SizedBox(width: 300),
+                      SizedBox(width: 300),
                       Expanded(
                         child: TextField(
                           textAlign: TextAlign.right,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             hintText: 'Search...',
                             border: OutlineInputBorder(),
                           ),
@@ -54,10 +60,10 @@ class BodyStyling extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(100.0, 20, 100, 20),
+                      padding: const EdgeInsets.fromLTRB(100.0, 20, 100, 20),
                       child: RichText(
                         textAlign: TextAlign.center,
-                        text: TextSpan(
+                        text: const TextSpan(
                           text: 'Welcome to ',
                           style: TextStyle(
                             fontSize: 20,
@@ -81,6 +87,7 @@ class BodyStyling extends StatelessWidget {
                     ),
                   ],
                 ),
+                const ImageGrid(),
                 const SizedBox(height: 50),
                 Stack(
                   alignment: Alignment.centerLeft,
@@ -373,7 +380,7 @@ class BodyStyling extends StatelessWidget {
                   style: TextStyle(fontSize: 30),
                 ),
                 const SizedBox(height: 20),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -476,6 +483,100 @@ class IconWithLabel extends StatelessWidget {
         Icon(icon),
         Text(label, style: const TextStyle(fontSize: 10)),
       ],
+    );
+  }
+}
+
+class ImageGrid extends StatelessWidget {
+  const ImageGrid({super.key});
+
+  // void _onImagePressed(BuildContext context, String imageName) {
+  //   ScaffoldMessenger.of(context).showSnackBar(
+  //     SnackBar(content: Text('$imageName pressed')),
+  //   );
+  // }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Employment()),
+                  );
+                },
+                child: Image.asset('assets/images/ES.png',
+                    width: 150, height: 150),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Community()),
+                  );
+                },
+                child: Image.asset('assets/images/CD.png',
+                    width: 150, height: 150),
+              ),
+              GestureDetector(
+                onTap: () {
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Housing()),
+                    );
+                  }
+                },
+                child: Image.asset('assets/images/HP.png',
+                    width: 150, height: 150),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Land()),
+                  );
+                },
+                child: Image.asset('assets/images/LM1.png',
+                    width: 150, height: 150),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Water()),
+                  );
+                },
+                child: Image.asset('assets/images/WD1.png',
+                    width: 150, height: 150),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Business()),
+                  );
+                },
+                child: Image.asset('assets/images/BI.png',
+                    width: 150, height: 150),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

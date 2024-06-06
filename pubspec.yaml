@@ -73,6 +73,13 @@ flutter:
      - assets/images/psi.png
      - assets/images/main.png
      - assets/images/news_and_updates.png
+     - assets/images/BI.png
+     - assets/images/HP.png
+     - assets/images/ES.png
+     - assets/images/CD.png
+     - assets/images/LM1.png
+     - assets/images/WD1.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
