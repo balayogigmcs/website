@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
-//import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:website/my_home_page.dart'; // Assuming this is your home page widget
 
-// Future main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(
-//     options: const FirebaseOptions(
-//       apiKey: "AIzaSyBCCBxNo4BFvPbbBMQP-AoFihlMblCUR_8",
-//       appId: "1:994624740239:web:b6ad44a86ddbe86edf89fa",
-//       messagingSenderId: "994624740239",
-//       projectId: "incentives-e3e78",
-//     ),
-//   );
+ Future main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp(
+     options: const FirebaseOptions(
+      apiKey: "AIzaSyDvlzPYLxJmnYg66lHl4XY6_6bvo0VvLA8",
+      projectId: "website-c30e4",
+      messagingSenderId: "1092137814775",
+      appId: "1:1092137814775:web:0f72a07b1db34b2a3121f2"
+     ),
+   );
 
-//   runApp(MyApp());
-// }
+   runApp(MyApp());
+ }
 
-void main(){
-  runApp(MyApp());
-}
 
 class MyApp extends StatelessWidget {
   @override

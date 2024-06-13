@@ -6,8 +6,8 @@ import 'package:website/categories/employment.dart';
 import 'package:website/categories/housing.dart';
 import 'package:website/categories/land.dart';
 import 'package:website/categories/water.dart';
-import 'package:website/home/news_and_updates.dart';
-import 'package:website/home/resources_and_tools.dart';
+import 'package:website/homepage/news_and_updates.dart';
+import 'package:website/homepage/resources_and_tools.dart';
 
 class BodyStyling extends StatelessWidget {
   const BodyStyling({Key? key}) : super(key: key);
@@ -62,11 +62,11 @@ class BodyStyling extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(100.0, 20, 100, 20),
                       child: RichText(
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.justify,
                         text: const TextSpan(
                           text: 'Welcome to ',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.normal,
                             color: Colors.black,
                           ),
@@ -74,13 +74,14 @@ class BodyStyling extends StatelessWidget {
                             TextSpan(
                               text: 'USA INCENTIVES ',
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                                  fontWeight: FontWeight.bold, fontSize: 20),
                             ),
                             TextSpan(
-                              text:
-                                  ', your ultimate guide to unlocking the vast array of incentives available in the United States! Whether you\'re a business owner, entrepreneur, student, or homeowner, discover a wealth of opportunities designed to support your goals and aspirations. Explore various programs, grants, tax credits, and resources tailored to empower individuals and organizations across every sector. Let\'s navigate the landscape of incentives together and pave the way for success in the land of opportunity',
-                            ),
+                                text:
+                                    ', your ultimate guide to unlocking the vast array of incentives available in the United States! Whether you\'re a business owner, entrepreneur, student, or homeowner, discover a wealth of opportunities designed to support your goals and aspirations. Explore various programs, grants, tax credits, and resources tailored to empower individuals and organizations across every sector. Let\'s navigate the landscape of incentives together and pave the way for success in the land of opportunity',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                )),
                           ],
                         ),
                       ),
@@ -128,7 +129,7 @@ class BodyStyling extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color.fromARGB(
-                                  255, 92, 0, 220), // Background color
+                                  255, 255, 255, 255), // Background color
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -149,8 +150,8 @@ class BodyStyling extends StatelessWidget {
                               'News and Updates',
                               style: TextStyle(
                                 fontSize: 28,
-                                color: Colors
-                                    .white, // White text for better contrast
+                                color: Color.fromARGB(255, 0, 0,
+                                    0), // White text for better contrast
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -158,7 +159,8 @@ class BodyStyling extends StatelessWidget {
                           const SizedBox(height: 60),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 0, 4, 239),
+                              backgroundColor:
+                                  Color.fromARGB(255, 255, 255, 255),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -179,7 +181,7 @@ class BodyStyling extends StatelessWidget {
                               'Latest Announcements',
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 0, 0, 0),
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -187,7 +189,8 @@ class BodyStyling extends StatelessWidget {
                           const SizedBox(height: 40),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 47, 0, 255),
+                              backgroundColor:
+                                  Color.fromARGB(255, 255, 255, 255),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -208,7 +211,7 @@ class BodyStyling extends StatelessWidget {
                               'Success Stories',
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 0, 0, 0),
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -216,7 +219,8 @@ class BodyStyling extends StatelessWidget {
                           const SizedBox(height: 40),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 0, 29, 243),
+                              backgroundColor:
+                                  Color.fromARGB(255, 255, 255, 255),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -237,7 +241,7 @@ class BodyStyling extends StatelessWidget {
                               'Events and Workshops',
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 0, 0, 0),
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -252,8 +256,7 @@ class BodyStyling extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                          15.0), // Increased border radius for a smoother look
+                      // borderRadius: BorderRadius.circular(15.0), // Increased border radius for a smoother look
                       child: Image.asset(
                         'assets/images/RT.png',
                         width: 1000,
@@ -266,8 +269,7 @@ class BodyStyling extends StatelessWidget {
                       width: 1000,
                       height: 600,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(
-                            15.0), // Same border radius as ClipRRect
+                        //borderRadius: BorderRadius.circular(15.0), // Same border radius as ClipRRect
                         gradient: LinearGradient(
                           colors: [
                             Colors.black.withOpacity(0.6),
@@ -287,7 +289,7 @@ class BodyStyling extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color.fromARGB(
-                                  255, 92, 0, 220), // Background color
+                                  255, 255, 255, 255), // Background color
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -308,8 +310,8 @@ class BodyStyling extends StatelessWidget {
                               'Resources and Tools',
                               style: TextStyle(
                                 fontSize: 28,
-                                color: Colors
-                                    .white, // White text for better contrast
+                                color: Color.fromARGB(255, 0, 0,
+                                    0), // White text for better contrast
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -317,7 +319,8 @@ class BodyStyling extends StatelessWidget {
                           const SizedBox(height: 60),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 0, 4, 239),
+                              backgroundColor:
+                                  Color.fromARGB(255, 255, 255, 255),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -331,14 +334,14 @@ class BodyStyling extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const NewsAndUpdates()),
+                                        const ResourcesAndTools()),
                               );
                             },
                             child: const Text(
                               'Calculator\'s and Tools',
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 0, 0, 0),
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -346,7 +349,8 @@ class BodyStyling extends StatelessWidget {
                           const SizedBox(height: 40),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 47, 0, 255),
+                              backgroundColor:
+                                  Color.fromARGB(255, 255, 255, 255),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -360,14 +364,14 @@ class BodyStyling extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const NewsAndUpdates()),
+                                        const ResourcesAndTools()),
                               );
                             },
                             child: const Text(
                               'FAQ\'s',
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 0, 0, 0),
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -375,7 +379,8 @@ class BodyStyling extends StatelessWidget {
                           const SizedBox(height: 40),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 0, 29, 243),
+                              backgroundColor:
+                                  Color.fromARGB(255, 255, 255, 255),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
@@ -389,14 +394,14 @@ class BodyStyling extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const NewsAndUpdates()),
+                                        const ResourcesAndTools()),
                               );
                             },
                             child: const Text(
                               'Glossary',
                               style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.white,
+                                color: Color.fromARGB(255, 0, 0, 0),
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -406,215 +411,108 @@ class BodyStyling extends StatelessWidget {
                     ),
                   ],
                 ),
-                // TextButton(
-                //   onPressed: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //           builder: (context) => const NewsAndUpdates()),
-                //     );
-                //   },
-                //   child: const Text(
-                //     'News and Updates',
-                //     textAlign: TextAlign.left,
-                //     style: TextStyle(fontSize: 30),
-                //   ),
-                // ),
-                // const SizedBox(height: 20),
-                // Padding(
-                //   padding: const EdgeInsets.only(left: 40.0),
-                //   child: Column(
-                //     crossAxisAlignment: CrossAxisAlignment.start,
-                //     children: [
-                //       TextButton(
-                //         onPressed: () {
-                //           Navigator.push(
-                //             context,
-                //             MaterialPageRoute(
-                //                 builder: (context) => const NewsAndUpdates()),
-                //           );
-                //         },
-                //         child: const Text(
-                //           'Latest Announcements',
-                //           style: TextStyle(fontSize: 15),
-                //         ),
-                //       ),
-                //       const SizedBox(height: 10),
-                //       TextButton(
-                //         onPressed: () {
-                //           Navigator.push(
-                //             context,
-                //             MaterialPageRoute(
-                //                 builder: (context) => const NewsAndUpdates()),
-                //           );
-                //         },
-                //         child: const Text(
-                //           'Success Stories',
-                //           style: TextStyle(fontSize: 15),
-                //         ),
-                //       ),
-                //       const SizedBox(height: 10),
-                //       TextButton(
-                //         onPressed: () {
-                //           Navigator.push(
-                //             context,
-                //             MaterialPageRoute(
-                //                 builder: (context) => const NewsAndUpdates()),
-                //           );
-                //         },
-                //         child: const Text(
-                //           'Events and Workshops',
-                //           style: TextStyle(fontSize: 15),
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
                 const SizedBox(height: 50),
-                // TextButton(
-                //   onPressed: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //           builder: (context) => const ResourcesAndTools()),
-                //     );
-                //   },
-                //   child: const Text(
-                //     'Resources and Tools',
-                //     textAlign: TextAlign.left,
-                //     style: TextStyle(fontSize: 30),
-                //   ),
-                // ),
-                // const SizedBox(height: 20),
-                // Column(
-                //   children: [
-                //     TextButton(
-                //       onPressed: () {
-                //         Navigator.push(
-                //           context,
-                //           MaterialPageRoute(
-                //               builder: (context) => const ResourcesAndTools()),
-                //         );
-                //       },
-                //       child: const Text(
-                //         'Calculators and Tools',
-                //         style: TextStyle(fontSize: 15),
-                //       ),
-                //     ),
-                //     const SizedBox(height: 10),
-                //     TextButton(
-                //       onPressed: () {
-                //         Navigator.push(
-                //           context,
-                //           MaterialPageRoute(
-                //               builder: (context) => const ResourcesAndTools()),
-                //         );
-                //       },
-                //       child: const Text(
-                //         'FAQ\'s',
-                //         style: TextStyle(fontSize: 15),
-                //       ),
-                //     ),
-                //     const SizedBox(height: 10),
-                //     TextButton(
-                //       onPressed: () {
-                //         Navigator.push(
-                //           context,
-                //           MaterialPageRoute(
-                //               builder: (context) => const ResourcesAndTools()),
-                //         );
-                //       },
-                //       child: const Text(
-                //         'Glossary',
-                //         style: TextStyle(fontSize: 15),
-                //       ),
-                //     ),
-                //   ],
-                // ),
-                const SizedBox(height: 50),
-                const Text(
-                  'Contact Us',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 30),
-                ),
-                const SizedBox(height: 20),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        children: const [
-                          Text(
-                            'Contact Information',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            'Phone: xxx-xxx-xxxx',
-                            style: TextStyle(fontSize: 10),
-                          ),
-                          Text(
-                            'Email: example@example.com',
-                            style: TextStyle(fontSize: 10),
-                          ),
-                        ],
+                Container(
+                  width: double.infinity, // Full width of the container
+                  color: Colors.black, // Background color
+                  padding: const EdgeInsets.symmetric(vertical: 50),
+                  child: const Column(
+                    children: [
+                      const Text(
+                        'Contact Us',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 30, color: Colors.white),
                       ),
-                    ),
-                    const SizedBox(width: 50),
-                    Expanded(
-                      child: Column(
-                        children: const [
-                          Text(
-                            'Feedback Form',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            'Provide your valuable feedback',
-                            style: TextStyle(fontSize: 10),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 50),
-                    Expanded(
-                      child: Column(
+                      const SizedBox(height: 20),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text('Social Media Links',
-                              style: TextStyle(fontSize: 20)),
-                          const SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              IconWithLabel(
-                                icon: FontAwesomeIcons.facebook,
-                                label: 'Facebook',
-                              ),
-                              SizedBox(width: 10),
-                              IconWithLabel(
-                                icon: FontAwesomeIcons.instagram,
-                                label: 'Instagram',
-                              ),
-                              SizedBox(width: 10),
-                              IconWithLabel(
-                                icon: FontAwesomeIcons.twitter,
-                                label: 'Twitter',
-                              ),
-                              SizedBox(width: 10),
-                              IconWithLabel(
-                                icon: FontAwesomeIcons.youtube,
-                                label: 'YouTube',
-                              ),
-                              SizedBox(width: 10),
-                            ],
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Contact Information',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.white),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Phone: xxx-xxx-xxxx',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.white),
+                                ),
+                                Text(
+                                  'Email: example@example.com',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 50),
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Feedback Form',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.white),
+                                ),
+                                SizedBox(height: 20),
+                                Text(
+                                  'Provide your valuable feedback',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 50),
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Text('Social Media Links',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white)),
+                                SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    IconWithLabel(
+                                      icon: FontAwesomeIcons.facebook,
+                                      label: 'Facebook',
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 10),
+                                    IconWithLabel(
+                                      icon: FontAwesomeIcons.instagram,
+                                      label: 'Instagram',
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 10),
+                                    IconWithLabel(
+                                      icon: FontAwesomeIcons.twitter,
+                                      label: 'Twitter',
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 10),
+                                    IconWithLabel(
+                                      icon: FontAwesomeIcons.youtube,
+                                      label: 'YouTube',
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 10),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                const SizedBox(height: 200),
               ],
             ),
           ),
@@ -627,19 +525,21 @@ class BodyStyling extends StatelessWidget {
 class IconWithLabel extends StatelessWidget {
   final IconData icon;
   final String label;
+  final Color color;
 
   const IconWithLabel({
     Key? key,
     required this.icon,
     required this.label,
+    this.color = Colors.black, // Default color is black
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(icon),
-        Text(label, style: const TextStyle(fontSize: 10)),
+        Icon(icon, color: color),
+        Text(label, style: TextStyle(fontSize: 10, color: color)),
       ],
     );
   }
@@ -647,12 +547,6 @@ class IconWithLabel extends StatelessWidget {
 
 class ImageGrid extends StatelessWidget {
   const ImageGrid({super.key});
-
-  // void _onImagePressed(BuildContext context, String imageName) {
-  //   ScaffoldMessenger.of(context).showSnackBar(
-  //     SnackBar(content: Text('$imageName pressed')),
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -667,20 +561,10 @@ class ImageGrid extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Employment()),
+                    MaterialPageRoute(builder: (context) => const Business()),
                   );
                 },
-                child: Image.asset('assets/images/ES.png',
-                    width: 150, height: 150),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Community()),
-                  );
-                },
-                child: Image.asset('assets/images/CD.png',
+                child: Image.asset('assets/images/BI.png',
                     width: 150, height: 150),
               ),
               GestureDetector(
@@ -695,12 +579,32 @@ class ImageGrid extends StatelessWidget {
                 child: Image.asset('assets/images/HP.png',
                     width: 150, height: 150),
               ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Community()),
+                  );
+                },
+                child: Image.asset('assets/images/CD.png',
+                    width: 150, height: 150),
+              ),
             ],
           ),
           const SizedBox(height: 16.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Employment()),
+                  );
+                },
+                child: Image.asset('assets/images/ES.png',
+                    width: 150, height: 150),
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -719,16 +623,6 @@ class ImageGrid extends StatelessWidget {
                   );
                 },
                 child: Image.asset('assets/images/WD1.png',
-                    width: 150, height: 150),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Business()),
-                  );
-                },
-                child: Image.asset('assets/images/BI.png',
                     width: 150, height: 150),
               ),
             ],

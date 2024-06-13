@@ -1,39 +1,99 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+class LabeledTextFormField extends StatelessWidget {
+  final String labelText;
+  final TextEditingController controller;
+  final String? Function(String?)? validator;
+  final int maxLines;
 
+  LabeledTextFormField({
+    Key? key,
+    required this.labelText,
+    required this.controller,
+    this.validator,
+    this.maxLines = 1,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          labelText,
+          style: TextStyle(
+            fontSize: 16.0,
+          ),
+        ),
+        SizedBox(height: 8.0),
+        TextFormField(
+          controller: controller,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+          ),
+          validator: validator,
+          maxLines: maxLines,
+        ),
+      ],
+    );
+  }
+}
 
 class RegulatoryAssistance extends StatefulWidget {
+  RegulatoryAssistance({Key? key}) : super(key: key);
+
   @override
   _RegulatoryAssistanceState createState() => _RegulatoryAssistanceState();
 }
 
 class _RegulatoryAssistanceState extends State<RegulatoryAssistance> {
   final _formKey = GlobalKey<FormState>();
-  String _businessName = '';
-  String _businessType = '';
-  String _regulatoryNeeds = '';
-  String _complianceIssues = '';
-  String _contactInfo = '';
+  final TextEditingController _businessNameController = TextEditingController();
+  final TextEditingController _businessTypeController = TextEditingController();
+  final TextEditingController _regulatoryNeedsController =
+      TextEditingController();
+  final TextEditingController _complianceIssuesController =
+      TextEditingController();
+  final TextEditingController _contactInfoController = TextEditingController();
   String _selectedCategory = 'Permitting Assistance';
+
+  Future<void> _saveRegulatoryAssistance() async {
+    if (_formKey.currentState!.validate()) {
+      await FirebaseFirestore.instance.collection('regulatory_assistance').add({
+        'category': _selectedCategory,
+        'business_name': _businessNameController.text,
+        'business_type': _businessTypeController.text,
+        'regulatory_needs': _regulatoryNeedsController.text,
+        'compliance_issues': _complianceIssuesController.text,
+        'contact_info': _contactInfoController.text,
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Regulatory Assistance'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
+    return AlertDialog(
+      title: const Text('Regulatory Assistance Form'),
+      content: SingleChildScrollView(
         child: Form(
           key: _formKey,
-          child: ListView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               DropdownButtonFormField(
                 value: _selectedCategory,
                 items: [
-                  DropdownMenuItem(child: Text('Permitting Assistance'), value: 'Permitting Assistance'),
-                  DropdownMenuItem(child: Text('Compliance Assistance'), value: 'Compliance Assistance'),
-                  DropdownMenuItem(child: Text('Business Licensing Support'), value: 'Business Licensing Support'),
+                  DropdownMenuItem(
+                      child: Text('Permitting Assistance'),
+                      value: 'Permitting Assistance'),
+                  DropdownMenuItem(
+                      child: Text('Compliance Assistance'),
+                      value: 'Compliance Assistance'),
+                  DropdownMenuItem(
+                      child: Text('Business Licensing Support'),
+                      value: 'Business Licensing Support'),
                 ],
                 onChanged: (value) {
                   setState(() {
@@ -46,106 +106,83 @@ class _RegulatoryAssistanceState extends State<RegulatoryAssistance> {
                 ),
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Business Name',
-                  border: OutlineInputBorder(),
-                ),
+              LabeledTextFormField(
+                labelText: 'Business Name',
+                controller: _businessNameController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter your business name';
                   }
                   return null;
                 },
-                onSaved: (value) {
-                  _businessName = value!;
-                },
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Business Type',
-                  border: OutlineInputBorder(),
-                ),
+              LabeledTextFormField(
+                labelText: 'Business Type',
+                controller: _businessTypeController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter your business type';
                   }
                   return null;
                 },
-                onSaved: (value) {
-                  _businessType = value!;
-                },
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Regulatory Needs',
-                  border: OutlineInputBorder(),
-                ),
-                maxLines: 3,
+              LabeledTextFormField(
+                labelText: 'Regulatory Needs',
+                controller: _regulatoryNeedsController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please describe your regulatory needs';
                   }
                   return null;
                 },
-                onSaved: (value) {
-                  _regulatoryNeeds = value!;
-                },
+                maxLines: 3,
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Compliance Issues or Questions',
-                  border: OutlineInputBorder(),
-                ),
-                maxLines: 3,
+              LabeledTextFormField(
+                labelText: 'Compliance Issues or Questions',
+                controller: _complianceIssuesController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please describe any compliance issues or questions';
                   }
                   return null;
                 },
-                onSaved: (value) {
-                  _complianceIssues = value!;
-                },
+                maxLines: 3,
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Contact Information',
-                  border: OutlineInputBorder(),
-                ),
+              LabeledTextFormField(
+                labelText: 'Contact Information',
+                controller: _contactInfoController,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter your contact information';
                   }
                   return null;
                 },
-                onSaved: (value) {
-                  _contactInfo = value!;
-                },
-              ),
-              SizedBox(height: 16.0),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
-                    // Here, you can handle form submission (e.g., send data to a server or display a success message)
-                    print('Business Name: $_businessName');
-                    print('Business Type: $_businessType');
-                    print('Regulatory Needs: $_regulatoryNeeds');
-                    print('Compliance Issues: $_complianceIssues');
-                    print('Contact Information: $_contactInfo');
-                  }
-                },
-                child: Text('Submit'),
               ),
             ],
           ),
         ),
       ),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Text('Cancel'),
+        ),
+        ElevatedButton(
+          onPressed: () async {
+            if (_formKey.currentState!.validate()) {
+              await _saveRegulatoryAssistance();
+              Navigator.of(context).pop();
+            }
+          },
+          child: const Text('Submit'),
+        ),
+      ],
     );
   }
 }

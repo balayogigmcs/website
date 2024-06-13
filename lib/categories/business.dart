@@ -91,7 +91,7 @@ class Business extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 160, vertical:0),
+          padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 0),
           child: Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -166,10 +166,12 @@ class Business extends StatelessWidget {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => GrantsAndFunding()));
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return GrantsAndFunding();
+                            },
+                          );
                         },
                         child: const Card(
                           color: Colors.black,
@@ -197,11 +199,12 @@ class Business extends StatelessWidget {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      RegulatoryAssistance()));
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return RegulatoryAssistance();
+                            },
+                          );
                         },
                         child: const Card(
                           color: Colors.black,
@@ -226,10 +229,12 @@ class Business extends StatelessWidget {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BusinessDevelopment()));
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return BusinessDevelopment();
+                            },
+                          );
                         },
                         child: const Card(
                           color: Colors.black,
